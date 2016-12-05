@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@color/silver">
+
+    <!-- Relative Layout 1 containing the header -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:id="@+id/layout_calc_header">
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp"
+            android:id="@+id/view"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="This result is not definitive and should only be used for an initial valuation!"
+            android:layout_width="match_parent"
+            android:id="@+id/calcHeader"
+            android:layout_height="51dp"
+            android:textSize="17sp"
+            android:textAlignment="center"
+            android:textColor="@color/textPrimary"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <!-- Relative Layout 2 containing the Footer -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:id="@+id/layout_calc_footer"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp"
+            android:id="@+id/spacer2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/calculateBtn"
+            android:text="Estimate VRT Cost"
+            android:textColor="@color/textPrimary"
+            android:textSize="15sp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonshape_calc"
+            android:layout_width="350dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" />
+
+
+    </RelativeLayout>
+
+    <!-- Relative Layout 3 containing the Calculator itself -->
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/layoutCalc"
+        android:layout_height="365dp"
+        android:layout_width="320dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp"
+            android:id="@+id/view6"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp"
+            android:id="@+id/view5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/costEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cost of vehicle (RRP):"
+            android:layout_below="@+id/view6"
+            android:layout_alignParentStart="true"
+            android:inputType="number|numberDecimal" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/costEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/emissionsEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Emissions(CO2):"
+            android:inputType="number"
+            android:layout_alignBaseline="@+id/editText2"
+            android:layout_alignBottom="@+id/editText2"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/manufacturerEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Manufacturer:"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/editText2"
+            android:layout_alignParentStart="true"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/yearEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year of Vehicle:"
+            android:inputType="date"
+            android:layout_below="@+id/modelEditTxt"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="11dp" />
+
+        <EditText
+            android:id="@+id/modelEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Model:"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/manufacturerEditTxt"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="13dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp"
+            android:id="@+id/view7"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/yearEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="€0.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calculationTxt"
+            android:textSize="30sp"
+            android:textColor="@color/textPrimary"
+            android:fontFamily="monospace"
+            android:layout_above="@+id/view5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="9dp" />
+
+        <TextView
+            android:text="VRT Calculation:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vrtTxtView"
+            android:textSize="13sp"
+            android:textColor="@color/textPrimary"
+            android:layout_below="@+id/view7"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

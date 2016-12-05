@@ -6,18 +6,18 @@ public class Vehicle {
     private String vehicleName;
     private String vehicleCategory;
     private String registration;
-    private String owner;
     private String registrationDate;
+    private String owner;
 
 
-    public Vehicle(String vehicleManufacturer, String vehicleName, String vehicleCategory, String registration, String owner, String registrationDate){
+    public Vehicle(String vehicleManufacturer, String vehicleName, String vehicleCategory, String registration, String registrationDate, String owner){
 
         this.vehicleManufacturer = vehicleManufacturer;
         this.vehicleName = vehicleName;
         this.vehicleCategory = vehicleCategory;
         this.registration = registration;
-        this.owner = owner;
         this.registrationDate = registrationDate;
+        this.owner = owner;
 
     }
 

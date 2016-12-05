@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_root_layout"
+    android:layout_width="300dp"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/custom_title"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="New Vehicle:"
+        android:textColor="@color/textPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/custom_edit_reg"
+        android:layout_width="fill_parent"
+        android:hint="Registration number"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:background="@color/silver"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start"
+        android:textColor="@color/textPrimary">
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/custom_edit_col"
+        android:layout_width="fill_parent"
+        android:hint="Color of Car"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:background="@color/silver"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start"
+        android:textColor="@color/textPrimary">
+    </EditText>
+
+    <EditText
+        android:id="@+id/custom_edit_type"
+        android:layout_width="fill_parent"
+        android:hint="Model of Car"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:background="@color/silver"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start"
+        android:textColor="@color/textPrimary">
+    </EditText>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/custom_button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="50"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/custom_button_commit"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="50"
+            android:text="Commit"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>
