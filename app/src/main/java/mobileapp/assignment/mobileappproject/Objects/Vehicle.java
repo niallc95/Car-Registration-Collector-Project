@@ -6,17 +6,15 @@ public class Vehicle {
     private String vehicleName;
     private String vehicleCategory;
     private String registration;
-    private String registrationDate;
     private String owner;
 
 
-    public Vehicle(String vehicleManufacturer, String vehicleName, String vehicleCategory, String registration, String registrationDate, String owner){
+    public Vehicle(String vehicleManufacturer, String vehicleName, String vehicleCategory, String registration, String owner){
 
         this.vehicleManufacturer = vehicleManufacturer;
         this.vehicleName = vehicleName;
         this.vehicleCategory = vehicleCategory;
         this.registration = registration;
-        this.registrationDate = registrationDate;
         this.owner = owner;
 
     }
@@ -33,9 +31,6 @@ public class Vehicle {
     }
     public String getRegistration() {
         return registration;
-    }
-    public String getRegistrationDate() {
-        return registrationDate;
     }
     public String getOwner() {
         return owner;

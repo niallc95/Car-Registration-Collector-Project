@@ -10,10 +10,7 @@
             android:id="@+id/nav_vrt_calc"
             android:icon="@drawable/ic_nav_calc"
             android:title="@string/vrt_calculator" />
-        <item
-            android:id="@+id/nav_registration_search"
-            android:icon="@drawable/ic_nav_registration"
-            android:title="@string/registration_search" />
+
         <item
             android:id="@+id/nav_add_registration"
             android:icon="@drawable/ic_action_car_add"
@@ -23,13 +20,13 @@
     <item android:title="@string/information">
         <menu>
             <item
+                android:id="@+id/nav_nct_location"
+                android:icon="@drawable/ic_nav_about"
+                android:title="@string/nct_centre_locations" />
+            <item
                 android:id="@+id/nav_email"
                 android:icon="@drawable/ic_nav_email"
                 android:title="@string/contact_us" />
-            <item
-                android:id="@+id/nav_information"
-                android:icon="@drawable/ic_nav_about"
-                android:title="@string/information" />
         </menu>
     </item>
 

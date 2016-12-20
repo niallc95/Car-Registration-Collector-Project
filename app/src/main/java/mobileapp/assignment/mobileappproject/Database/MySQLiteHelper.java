@@ -23,10 +23,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final String KEY_VEHICLE_NAME = "vehicleName";
     private static final String KEY_VEHICLE_CATEGORY = "vehicleCategory";
     private static final String KEY_VEHICLE_REGISTRATION = "vehicleRegistration";
-    private static final String KEY_REGISTRATION_DATE = "registrationDate";
     private static final String KEY_VEHICLE_OWNER= "owner";
 
-    private static final String[] COLUMNS = {KEY_ID,KEY_VEHICLE_MANUFACTURER,KEY_VEHICLE_NAME,KEY_VEHICLE_CATEGORY,KEY_VEHICLE_REGISTRATION,KEY_REGISTRATION_DATE,KEY_VEHICLE_OWNER};
+    private static final String[] COLUMNS = {KEY_ID,KEY_VEHICLE_MANUFACTURER,KEY_VEHICLE_NAME,KEY_VEHICLE_CATEGORY,KEY_VEHICLE_REGISTRATION,KEY_VEHICLE_OWNER};
 
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -46,7 +45,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "vehicleName TEXT, " +
                 "vehicleCategory TEXT, " +
                 "vehicleRegistration TEXT, " +
-                "registrationDate TEXT, " +
                 "owner TEXT )";
 
         // create books table
@@ -74,7 +72,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(KEY_VEHICLE_NAME, vehicle.getVehicleName());
         values.put(KEY_VEHICLE_CATEGORY, vehicle.getVehicleCategory());
         values.put(KEY_VEHICLE_REGISTRATION, vehicle.getRegistration());
-        values.put(KEY_REGISTRATION_DATE, vehicle.getRegistrationDate());
         values.put(KEY_VEHICLE_OWNER, vehicle.getOwner());
 
 
@@ -96,7 +93,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         Vehicle vehicle = null;
         if (cursor.moveToFirst()) {
             do {
-                vehicle = new Vehicle(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5),cursor.getString(6));
+                vehicle = new Vehicle(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5));
 
                 // Add vehicle to vehicles
                 vehicles.add(vehicle);
@@ -107,5 +104,41 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         // return vehicles
         return vehicles;
+    }
+
+    public List<Vehicle> getVehicle(String reg) {
+        List<Vehicle> vehicles = new LinkedList<Vehicle>();
+        //Select vehicle query
+        String query = "SELECT  * FROM " + TABLE_VEHICLES +" WHERE "+KEY_VEHICLE_REGISTRATION+"="+reg;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        //go over each row, build vehicle object and add it to list
+        Vehicle vehicle = null;
+        if (cursor.moveToFirst()) {
+            do {
+                vehicle = new Vehicle(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5));
+
+                // Add vehicle to vehicles
+                vehicles.add(vehicle);
+            } while (cursor.moveToNext());
+        }
+
+        Log.d("getVehicle()", vehicles.toString());
+
+        // return vehicles
+        return vehicles;
+    }
+
+    //Delete
+    public void deleteVehicleById(int Id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_VEHICLES, KEY_ID + "=?", new String[]{String.valueOf(Id)});
+    }
+
+    public void deleteAllCars() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_VEHICLES, null, null);
     }
 }

@@ -54,7 +54,7 @@
         <Button
             android:id="@+id/calculateBtn"
             android:text="Estimate VRT Cost"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:layout_height="40dp"
             android:background="@drawable/buttonshape_calc"
@@ -72,7 +72,7 @@
         android:background="@color/white"
         android:id="@+id/layoutCalc"
         android:layout_height="365dp"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
 
@@ -91,73 +91,6 @@
             android:layout_height="3dp"
             android:id="@+id/view5"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:id="@+id/costEditTxt"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Cost of vehicle (RRP):"
-            android:layout_below="@+id/view6"
-            android:layout_alignParentStart="true"
-            android:inputType="number|numberDecimal" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/costEditTxt"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:id="@+id/emissionsEditTxt"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Emissions(CO2):"
-            android:inputType="number"
-            android:layout_alignBaseline="@+id/editText2"
-            android:layout_alignBottom="@+id/editText2"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:id="@+id/manufacturerEditTxt"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Manufacturer:"
-            android:layout_marginTop="14dp"
-            android:layout_below="@+id/editText2"
-            android:layout_alignParentStart="true"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/yearEditTxt"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Year of Vehicle:"
-            android:inputType="date"
-            android:layout_below="@+id/modelEditTxt"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="11dp" />
-
-        <EditText
-            android:id="@+id/modelEditTxt"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Model:"
-            android:inputType="textPersonName"
-            android:layout_below="@+id/manufacturerEditTxt"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="13dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            android:layout_height="3dp"
-            android:id="@+id/view7"
-            android:layout_marginTop="11dp"
-            android:layout_below="@+id/yearEditTxt"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -179,7 +112,63 @@
             android:id="@+id/vrtTxtView"
             android:textSize="13sp"
             android:textColor="@color/textPrimary"
-            android:layout_below="@+id/view7"
+            android:layout_above="@+id/calculationTxt"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="22dp" />
+
+        <Spinner
+            android:id="@+id/manufacturers_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:entries="@array/manufacturers_array"
+            android:layout_below="@+id/costEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/emissionsEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Emissions(CO2):"
+            android:inputType="number"
+            android:layout_below="@+id/modelEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/yearEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year of Vehicle:"
+            android:inputType="date"
+            android:layout_below="@+id/emissionsEditTxt"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/costEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cost of vehicle (RRP):"
+            android:inputType="number|numberDecimal"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/view6"
+            android:layout_alignParentStart="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="3dp"
+            android:id="@+id/view7"
+            android:layout_above="@+id/vrtTxtView"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp" />
+
+        <EditText
+            android:id="@+id/modelEditTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Model:"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/manufacturers_spinner"
             android:layout_alignParentStart="true" />
 
     </RelativeLayout>

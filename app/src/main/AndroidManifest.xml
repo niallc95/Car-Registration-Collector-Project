@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mobileapp.assignment.mobileappproject">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,16 +41,28 @@
         </activity>
 
         <activity
-            android:name=".Activities.SearchRegActivity"
-            android:label="@string/search_reg"
+            android:name=".Activities.AddRegActivity"
+            android:label="@string/add_reg"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName=".Activities.MainActivity">
         </activity>
 
         <activity
-            android:name=".Activities.AddRegActivity"
-            android:label="@string/add_reg"
+            android:name=".Activities.MapsActivity"
+            android:label="@string/vrt_locations"
             android:parentActivityName=".Activities.MainActivity">
         </activity>
+
+        <activity
+            android:name=".Activities.ContactActivity"
+            android:label="@string/contact_us"
+            android:parentActivityName=".Activities.MainActivity">
+        </activity>
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
     </application>
 

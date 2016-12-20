@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,10 +33,22 @@ public class ArrayAdapter extends android.widget.ArrayAdapter<Vehicle> {
         // Find views
         TextView regText = (TextView) convertView.findViewById(R.id.regTxt);
         TextView ownerText = (TextView) convertView.findViewById(R.id.ownerTxt);
+        ImageView icon = (ImageView) convertView.findViewById(R.id.classIV);
 
         // Populate the corresponding fields for each car
         regText.setText(String.valueOf(vehicle.getRegistration()));
         ownerText.setText(String.valueOf(vehicle.getOwner()));
+        if(String.valueOf(vehicle.getVehicleCategory()).contains("Bike")){
+            icon.setImageResource(R.drawable.ic_a_class);
+        }else if(String.valueOf(vehicle.getVehicleCategory()).contains("Car")|| String.valueOf(vehicle.getVehicleCategory()).contains("Jeep")){
+            icon.setImageResource(R.drawable.ic_b_class);
+        }else if(String.valueOf(vehicle.getVehicleCategory()).contains("Truck")){
+            icon.setImageResource(R.drawable.ic_c_class);
+        }else if(String.valueOf(vehicle.getVehicleCategory()).contains("Bus")){
+            icon.setImageResource(R.drawable.ic_d_class);
+        }else {
+            icon.setImageResource(R.drawable.logo_main);
+        }
 
         return convertView;
     }

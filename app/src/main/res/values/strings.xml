@@ -15,4 +15,40 @@
     <string name="contact_us">Contact us</string>
     <string name="add_reg">Add to Registry</string>
     <string name="search_reg">Search Registry</string>
+    <string name="nct_centre_locations">NCT centre locations</string>
+    <string name="plate_number">Plate Number</string>
+    <string name="vehicle_manufacturer">Vehicle Manufacturer</string>
+    <string name="vehicle_type">Vehicle Type</string>
+    <string name="vehicle_model">Vehicle Model</string>
+    <string name="owner">Owner</string>
+    <string name="cancel">Cancel</string>
+    <string name="commit">Commit</string>
+    <string name="search">Search</string>
+    <string name="contactUs_text">Contact us by email</string>
+    <string name="vrt_locations">VRT locations</string>
+    <string name="hoarder_email">info.hoarder@gmail.com</string>
+    <string name="vrt_number">01-4135975</string>
+
+    <string-array name="manufacturers_array">
+        <item>BMW</item>
+        <item>Mercedes Benz</item>
+        <item>Toyota</item>
+        <item>Ford</item>
+        <item>Seat</item>
+        <item>Nissan</item>
+        <item>Hyundai</item>
+        <item>Opel</item>
+        <item>Alfa Romeo</item>
+        <item>Fiat</item>
+        <item>Dacia</item>
+        <item>Renault</item>
+    </string-array>
+
+    <string-array name="type_array">
+        <item>Car</item>
+        <item>Bus</item>
+        <item>Truck</item>
+        <item>Jeep</item>
+        <item>Bike</item>
+    </string-array>
 </resources>

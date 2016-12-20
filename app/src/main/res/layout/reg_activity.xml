@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="3dp"
+        android:id="@+id/dividerBtm"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/listViewAddVehicles"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal"
+        android:layout_height="430dp"
+        android:layout_weight="200"
+        android:layout_above="@+id/dividerBtm"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="3dp"
+        android:id="@+id/dividerTop"
+        android:layout_above="@+id/listViewAddVehicles"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add"
+        app:srcCompat="@drawable/ic_action_car_add"
+        android:tint="@color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="11dp"
+        android:layout_marginLeft="@dimen/float_btn_margin"
+        android:layout_marginRight="@dimen/float_btn_margin"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/txtsearch"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+
+        android:layout_width="235dp"
+        android:layout_alignTop="@+id/add"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp" />
+
+</RelativeLayout>

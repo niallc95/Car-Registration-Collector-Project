@@ -17,22 +17,31 @@
 
     <TextView
         android:text="TextView"
-        android:id="@+id/ownerTxt"
-        android:layout_height="30dp"
-        android:textColor="@color/textPrimary"
-        android:textSize="15sp"
-        android:layout_below="@+id/regTxt"
-        android:layout_alignParentStart="true"
-        android:layout_width="350dp" />
-
-    <TextView
-        android:text="TextView"
         android:id="@+id/regTxt"
         android:textColor="@color/textPrimary"
         android:textSize="22sp"
         android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_above="@+id/ownerTxt"
+        android:layout_alignStart="@+id/ownerTxt" />
+
+    <ImageView
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_c_class"
+        android:id="@+id/classIV"
+        android:layout_width="80dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_width="350dp" />
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:id="@+id/ownerTxt"
+        android:layout_height="30dp"
+        android:textColor="@color/textPrimary"
+        android:textSize="15sp"
+        android:layout_width="250dp"
+        android:layout_marginEnd="24dp"
+        android:layout_above="@+id/divider4"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
