@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import mobileapp.assignment.mobileappproject.Objects.Vehicle;
 import mobileapp.assignment.mobileappproject.R;
 
+/**
+ * Array adapter for use when displaying vehicle data in the custom row layout
+ */
 
 public class ArrayAdapter extends android.widget.ArrayAdapter<Vehicle> {
 

@@ -12,7 +12,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import mobileapp.assignment.mobileappproject.R;
-
+/**
+ * Maps screen for google maps integration when displaying the NCT locations
+ */
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;

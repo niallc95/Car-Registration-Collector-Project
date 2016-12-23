@@ -49,7 +49,7 @@
 
         <activity
             android:name=".Activities.MapsActivity"
-            android:label="@string/vrt_locations"
+            android:label="@string/nct_centre_locations"
             android:parentActivityName=".Activities.MainActivity">
         </activity>
 

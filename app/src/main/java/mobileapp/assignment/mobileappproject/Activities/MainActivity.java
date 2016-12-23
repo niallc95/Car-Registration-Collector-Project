@@ -12,14 +12,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.List;
-
-import mobileapp.assignment.mobileappproject.Database.MySQLiteHelper;
-import mobileapp.assignment.mobileappproject.Objects.Vehicle;
 import mobileapp.assignment.mobileappproject.R;
+
+/**
+ * Main activity for generating the side navigation bar and incorporating the initial content of the first screen
+ */
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

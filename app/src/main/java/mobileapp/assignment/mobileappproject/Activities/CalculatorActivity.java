@@ -6,15 +6,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import mobileapp.assignment.mobileappproject.R;
 
 /**
- * Created by Niall on 04/12/2016.
+ * Basic vrt calculator which receives user input and calculates a estimated figure of VRT
  */
-
 public class CalculatorActivity extends AppCompatActivity{
 
     double rrp;
@@ -25,7 +25,7 @@ public class CalculatorActivity extends AppCompatActivity{
     EditText costTxt;
     EditText emissionsTxt;
     EditText yearTxt;
-    EditText manufacturerTxt;
+    Spinner manufacturerTxt;
     EditText modelTxt;
     TextView VRT;
 
@@ -37,7 +37,7 @@ public class CalculatorActivity extends AppCompatActivity{
         calculate = (Button) findViewById(R.id.calculateBtn);
         costTxt = (EditText)findViewById(R.id.costEditTxt);
         emissionsTxt = (EditText)findViewById(R.id.emissionsEditTxt);
-        manufacturerTxt = (EditText)findViewById(R.id.manufacturerEditTxt);
+        manufacturerTxt = (Spinner)findViewById(R.id.manufacturers_spinner);
         modelTxt = (EditText)findViewById(R.id.modelEditTxt);
         yearTxt = (EditText)findViewById(R.id.yearEditTxt);
         VRT = (TextView) findViewById(R.id.calculationTxt);
@@ -46,7 +46,7 @@ public class CalculatorActivity extends AppCompatActivity{
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(costTxt.length() == 0||emissionsTxt.length() == 0||manufacturerTxt.length() == 0||modelTxt.length() == 0||yearTxt.length() == 0){
+                if(costTxt.length() == 0||emissionsTxt.length() == 0||modelTxt.length() == 0||yearTxt.length() == 0){
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "Please fill in all of the required information", Toast.LENGTH_SHORT);
                     toast.show();

@@ -8,17 +8,23 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/logo_main"
-        android:id="@+id/imageView2"
+        android:id="@+id/logoView"
         android:layout_marginTop="14dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fromDegrees="45"
+        android:toDegrees="45"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="0"
+        android:startOffset="0"/>
 
     <View
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
         android:layout_height="3dp"
         android:id="@+id/view2"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/logoView"
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp" />
 
@@ -26,7 +32,7 @@
         android:layout_width="60dp"
         app:srcCompat="@drawable/ic_address"
         android:layout_marginStart="21dp"
-        android:id="@+id/imageView4"
+        android:id="@+id/locateIcon"
         android:layout_above="@+id/sendEmail"
         android:layout_alignStart="@+id/sendEmail"
         android:layout_marginBottom="48dp"
@@ -36,9 +42,9 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:srcCompat="@drawable/ic_dialer"
-        android:id="@+id/imageView5"
+        android:id="@+id/phoneIcon"
         android:layout_below="@+id/view2"
-        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignStart="@+id/locateIcon"
         android:layout_marginTop="27dp" />
 
     <TextView
@@ -48,8 +54,8 @@
         android:id="@+id/phoneTxt"
         android:textColor="@color/textPrimary"
         android:textSize="30sp"
-        android:layout_alignBottom="@+id/imageView5"
-        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignBottom="@+id/phoneIcon"
+        android:layout_alignStart="@+id/logoView"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="11dp" />
 

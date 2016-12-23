@@ -11,12 +11,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="mobileapp.assignment.mobileappproject.Activities.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:background="@color/colorPrimaryDark">
 
 
-    <ListView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logo_main"
+        android:id="@+id/imageView2"
+        android:layout_marginTop="68dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="420dp" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Car Registry App"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView4"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Please use the navigation bar to the left "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView5"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:text="To begin browsing!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

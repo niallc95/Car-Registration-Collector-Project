@@ -12,6 +12,10 @@ import java.util.List;
 
 import mobileapp.assignment.mobileappproject.Objects.Vehicle;
 
+/**
+ * All database functionality
+ */
+
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     // Books table name

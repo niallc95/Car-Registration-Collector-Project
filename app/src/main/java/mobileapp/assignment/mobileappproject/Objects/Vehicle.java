@@ -1,5 +1,7 @@
 package mobileapp.assignment.mobileappproject.Objects;
-
+/**
+ * Vehicle object
+ */
 public class Vehicle {
 
     private String vehicleManufacturer;

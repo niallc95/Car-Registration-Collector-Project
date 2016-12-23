@@ -6,12 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -28,17 +24,15 @@ import mobileapp.assignment.mobileappproject.Objects.Vehicle;
 import mobileapp.assignment.mobileappproject.R;
 
 /**
- * Created by Niall on 04/12/2016.
+ * Browse and add vehicle data to the database. Contains database integration with use of the MySQLiteHelper
  */
 
 public class AddRegActivity extends AppCompatActivity{
 
     ListView vehicleList;
     FloatingActionButton add;
-    final Context context = this;
     String reg, manufacturer, type, model, owner;
     List<Vehicle> list;
-    EditText searchBar;
     ArrayAdapter vehicleAdapter;
     ArrayList<Vehicle> listContainer;
 
@@ -50,8 +44,6 @@ public class AddRegActivity extends AppCompatActivity{
 
         final MySQLiteHelper db = new MySQLiteHelper(this);
 
-        //Set search bar edit text
-        searchBar = (EditText) findViewById(R.id.txtsearch);
         //Get listView item
         vehicleList = (ListView) findViewById(R.id.listViewAddVehicles);
         //Add divider for each listView item
@@ -115,36 +107,6 @@ public class AddRegActivity extends AppCompatActivity{
                     }
                 });
                 dialog.show();
-            }
-        });
-
-        //Search functionality
-        searchBar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().equals("")) {
-                    // reset listview
-                    initList();
-                } else {
-                    // perform search
-                    searchItem(s.toString());
-                }
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-            public void searchItem(String textToSearch) {
-                for (Vehicle vehicle : listContainer) {
-                    if (db.getVehicle(textToSearch) == null) {
-                        Log.d("getVehicle", String.valueOf(db.getVehicle(textToSearch)));
-                        listContainer.remove(vehicle);
-                    }
-                    vehicleAdapter.notifyDataSetChanged();
-                }
             }
         });
     }
